@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="utf-8">
+	<title>{{ page.title }} | {{ site.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% endif %},{{ site.title }},{{ site.author.name }},{{ site.tagline }}">
+    <meta name="author" content="{{ site.author.name }}">
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/style.css?body=1" type="text/css" media="all">
+    <style type="text/css"></style>
+    <script src="{{ ASSET_PATH }}/js/jquery-1.8.3.min.js"></script>
+    <link rel="shortcut icon" href="{{ ASSET_PATH }}/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ ASSET_PATH }}/img/favicon_32.png" sizes="32x32">
+</head>
+<body>
+<div class="line_gnd"> </div>
+<div class="bottom"> </div>
+  {% include themes/greyer/header.html %}
+  {{ content }}
+  {% include themes/greyer/footer.html %}
+  {% include JB/analytics %}
+<div class="bottom"> </div>
+</body>
+</html>

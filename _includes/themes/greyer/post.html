@@ -1,0 +1,65 @@
+<section class="content">
+  <div class="content-cnt fn-clear">
+    <div class="main fn-clear">
+      <article class="entry">
+        <h1 class="title">{{ page.title }}</h1>
+        <section class="meta">
+        <span class="author">
+         By <a href="http://blog.zhm.me">{{ site.author.name }}</a>
+        </span>
+        <span class="time">
+         Time: <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
+        </span>
+        {% if page.categories %}
+        <span class="categories">
+          Categories:
+          {% for cat in page.categories %}
+          <a href="/categories.html#{{ cat }}-ref" title="{{ cat }}">{{ cat }}</a>&nbsp;
+          {% endfor %}
+        </span>
+        {% endif %}
+        {% if page.tags %}
+        <span class="tags">
+          Tags:
+          {% for tag in page.tags %}
+          <a href="/tags.html#{{ tag }}-ref" title="{{ tag }}">{{ tag }}</a>&nbsp;
+          {% endfor %}
+        </span>
+        {% endif %}
+        </section>
+        <p class="description">{{ page.description }}</p>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3891446182867361";
+/* 728x15 */
+google_ad_slot = "0671443203";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+ 			 <section class="post">
+ 			 {{ content }}
+ 			 </section>
+          <nav class="pagination-link">
+            {% if page.previous %}
+            <a class="prev" href="{{ page.previous.url }}" rel="bookmark">&laquo;&nbsp;{{ page.previous.title | truncatewords:5 }}</a>
+            {% endif %}
+            {% if page.next %}
+            <a class="next" href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;&raquo;</a>
+            {% endif %}
+          </nav>
+      </article><!-- .entry -->
+		<hr>
+		{% include JB/comments %}
+    </div>
+      <div class="aside fn-clear">
+      {% include themes/greyer/wg-search.html %}
+      {% include themes/greyer/wg-contact.html %}
+	  {% include themes/greyer/wg-categories.html %}
+	  {% include themes/greyer/wg-project.html %}
+	  {% include themes/greyer/wg-other.html %}
+	  </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<header id="header">
+<div class="header fn-clear">
+    <section class="header-cnt fn-clear">
+       <div class="logo">
+         <div class="logo-cnt">
+           <a href="/" title="芝麻小站"class="fontface" id="title"><span class="orange">芝</span><span class="pink">麻</span><span class="green">小</span><span class="blue ">站</span><span class="purple"></span></a>
+           <p>{{ site.tagline }}</p>
+         </div>
+       </div>
+        <nav id="nav">
+         <ul>{% capture index %}{{ 'index' }}{% endcapture %}{% capture archive %}{{ 'archive' }}{% endcapture %}{% capture categories %}{{ 'categories' }}{% endcapture %}{% capture pages %}{{ 'pages' }}{% endcapture %}{% capture tags %}{{ 'tags' }}{% endcapture %}{% capture about %}{{ 'about' }}{% endcapture %}
+{% if page.name == index %}<li class="active"><a href="/" class="active">首页</a></li>{% else %}<li><a href="/">首页</a></li>{% endif %}
+{% if page.name == archive %}<li class="active"><a href="/archive.html" class="active">归档</a></li>{% else %}<li><a href="/archive.html">归档</a></li>{% endif %}
+{% if page.name == categories %}<li class="active"><a href="/categories.html" class="active">分类</a></li>{% else %}<li><a href="/categories.html">分类</a></li>{% endif %}
+{% if page.name == pages %}<li class="active"><a href="/pages.html" class="active">页面</a></li>{% else %}<li><a href="/pages.html">页面</a></li>{% endif %}
+{% if page.name == tags %}<li class="active"><a href="/tags.html" class="active">标签</a></li>{% else %}<li><a href="/tags.html">标签</a></li>{% endif %}
+{% if page.name == about %}<li class="active"><a href="/about.html" class="active">关于我</a></li>{% else %}<li><a href="/about.html">关于我</a></li>{% endif %}
+           <li><a href="/atom.xml" target="_blank" >Rss</a></li>
+         </ul>
+       </nav>
+    </section>
+</div>
+</header>
